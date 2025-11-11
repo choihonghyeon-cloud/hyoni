@@ -156,16 +156,23 @@
     }
 
     // ✅ 선택한 학교의 시트 열기
-    function goToSheet() {
-      const select = document.getElementById('school');
-      const link = select.value;
-      if (link) {
-        window.open(link, '_blank');
-      } else {
-        alert('학교를 선택하세요!');
-      }
-    }
-  </script>
+<script>
+function goToSheet() {
+  const select = document.getElementById('school');
+  const link = select.value;
+  const schoolName = select.options[select.selectedIndex].text; // 선택된 학교 이름
+
+  if (link) {
+    // ✅ 링크에 ?active=학교명 추가
+    const fullLink = `${link}?active=${encodeURIComponent(schoolName)}`;
+    window.open(fullLink, '_blank');
+  } else {
+    alert('학교를 선택하세요!');
+  }
+}
+</script>
+
 </body>
 </html>
+
 
