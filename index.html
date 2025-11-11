@@ -81,7 +81,10 @@
   <p>본 프로그램은 2026학년도 1학기 시간표 작성을 위해 참여학교별로 운영됩니다.</p>
   <p>각 학교의 개설 과목을 확인하고, 신청한 후 내용을 점검할 수 있습니다.</p>
 
+  <!-- ✅ 학교별 개설 과목 버튼 -->
   <button onclick="showSubjects()">학교별 개설 과목</button>
+
+  <!-- ✅ 학교별 시트 선택 버튼 -->
   <button onclick="openModal()">1차 기초자료 조사</button>
 
   <div class="note">※ 문의 ☎ 055)230-8332 | 경남온라인학교 최홍현</div>
@@ -90,6 +93,7 @@
     <img src="logo.png" alt="경남온라인학교 로고">
   </div>
 
+  <!-- ✅ 학교 선택 모달 -->
   <div id="schoolModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -133,9 +137,13 @@
   </div>
 
   <script>
+    // ✅ 학교별 개설 과목: 클릭 시 해당 구글 시트 열기
     function showSubjects() {
-      alert('학교별 개설 과목은 구글시트와 연결 예정입니다.');
+      const link = "https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=400361732";
+      window.open(link, '_blank');
     }
+
+    // ✅ 학교별 시트 모달 열기
     function openModal() {
       document.getElementById('schoolModal').style.display = 'block';
     }
@@ -146,6 +154,8 @@
       const modal = document.getElementById('schoolModal');
       if (e.target == modal) modal.style.display = 'none';
     }
+
+    // ✅ 선택한 학교의 시트 열기
     function goToSheet() {
       const select = document.getElementById('school');
       const link = select.value;
@@ -158,3 +168,4 @@
   </script>
 </body>
 </html>
+
