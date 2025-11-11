@@ -82,7 +82,7 @@
   <p>각 학교의 개설 과목을 확인하고, 신청한 후 내용을 점검할 수 있습니다.</p>
 
   <button onclick="showSubjects()">학교별 개설 과목</button>
-  <button onclick="openModal()">시간표 신청 확인</button>
+  <button onclick="openModal()">1차 기초자료 조사</button>
 
   <div class="note">※ 문의 ☎ 055)230-8332 | 경남온라인학교 최홍현</div>
 
@@ -97,12 +97,38 @@
       <label for="school">학교 선택:</label><br>
       <select id="school">
         <option value="">-- 학교를 선택하세요 --</option>
-        <option>거창여고</option>
-        <option>금남고</option>
-        <option>남지고</option>
-        <option>남해제일고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=329893221">거창여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1564150147">금남고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1170713167">남지고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=2028323266">남해제일고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=2142862812">단성고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=840979221">덕산고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=430723396">밀성고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1053367429">밀양여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=26014216">삼가고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1029036752">삼랑진고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1891426652">삼천포여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1558915266">삼천포중앙고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1797234766">서상고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=585788060">세종고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1936908784">아림고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=418244026">안의고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1938858551">야로고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=375201286">영산고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=124912074">옥종고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=649998212">의령여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=248592858">진교고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1844635433">진서고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1704038200">진해용원고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=463928728">창녕고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1379378835">창녕대성고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=117623904">창녕여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=486820462">창원명지여고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=2020330348">합천고</option>
+        <option value="https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=652343260">합천여고</option>
       </select><br>
-      <input type="button" value="이동" onclick="alert('학교별 페이지 연결은 다음 단계에서 추가됩니다.')">
+
+      <input type="button" value="이동" onclick="goToSheet()">
     </div>
   </div>
 
@@ -120,10 +146,15 @@
       const modal = document.getElementById('schoolModal');
       if (e.target == modal) modal.style.display = 'none';
     }
+    function goToSheet() {
+      const select = document.getElementById('school');
+      const link = select.value;
+      if (link) {
+        window.open(link, '_blank');
+      } else {
+        alert('학교를 선택하세요!');
+      }
+    }
   </script>
 </body>
 </html>
-
-
-
-
