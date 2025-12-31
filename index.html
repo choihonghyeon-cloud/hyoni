@@ -2,127 +2,123 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2026학년도 1학기 시간표 신청</title>
+
   <style>
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #222;
-      text-align: center;
+    body{
+      font-family:'Noto Sans KR',sans-serif;
+      margin:0;
+      background:#ffffff;
+      color:#222;
+      text-align:center;
     }
-    header {
-      background-color: #153e1a;
-      color: white;
-      padding: 16px;
-      font-size: 1.8em;
-      font-weight: bold;
+    header{
+      background:#153e1a;
+      color:#fff;
+      padding:16px;
+      font-size:1.8em;
+      font-weight:800;
     }
-    .wrap {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 30px 16px 60px;
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      padding:28px 16px 60px;
     }
-    p { margin: 8px 0; line-height: 1.6; }
+    p{ margin:8px 0; line-height:1.6; }
 
-    button {
-      background-color: #3e7c40;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      font-size: 1em;
-      border-radius: 10px;
-      margin: 10px 8px;
-      cursor: pointer;
-      box-shadow: 3px 3px 0px #264d27;
-      transition: 0.2s;
+    .btns{ margin-top:18px; }
+    button{
+      background:#3e7c40;
+      color:#fff;
+      border:none;
+      padding:12px 28px;
+      font-size:1em;
+      border-radius:12px;
+      margin:10px 8px;
+      cursor:pointer;
+      box-shadow:3px 3px 0 #264d27;
+      transition:.2s;
     }
-    button:hover {
-      background-color: #2f6431;
-      transform: translateY(-2px);
+    button:hover{
+      background:#2f6431;
+      transform:translateY(-2px);
     }
-
-    .note {
-      font-size: 0.95em;
-      color: #444;
-      margin-top: 14px;
+    .note{
+      margin-top:14px;
+      font-size:.95em;
+      color:#444;
     }
-
-    .logo img {
-      width: 180px;
-      height: auto;
-      margin-top: 26px;
+    .logo img{
+      width:180px;
+      height:auto;
+      margin-top:26px;
     }
 
     /* Modal */
-    .modal {
-      display: none;         /* ✅ 기본은 절대 안 보이게 */
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.45);
+    .modal{
+      display:none;          /* ✅ 기본은 닫힘 */
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.45);
+      z-index:1000;
     }
-    .modal-content {
-      background-color: white;
-      margin: 10% auto;
-      padding: 18px 18px 16px;
-      border-radius: 14px;
-      width: 360px;
-      text-align: left;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+    .modal-content{
+      background:#fff;
+      width:380px;
+      margin:10% auto;
+      padding:18px 18px 16px;
+      border-radius:14px;
+      text-align:left;
+      box-shadow:0 6px 24px rgba(0,0,0,.30);
     }
-    .modal-head {
+    .modal-head{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      margin-bottom: 10px;
+      margin-bottom:8px;
     }
-    .modal-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin: 0;
+    .modal-title{
+      margin:0;
+      font-size:18px;
+      font-weight:900;
     }
-    .close {
-      font-size: 22px;
-      cursor: pointer;
-      user-select: none;
+    .close{
+      font-size:22px;
+      cursor:pointer;
+      user-select:none;
     }
-    label { font-size: 0.95em; color:#333; }
-    select, input[type="button"] {
-      margin-top: 8px;
-      padding: 10px 10px;
-      width: 100%;
-      box-sizing: border-box;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 14px;
+    .sub{
+      margin:6px 0 10px;
+      font-size:12px;
+      color:#666;
     }
-    input[type="button"] {
-      background: #f2f2f2;
-      cursor: pointer;
-      font-weight: 700;
+    select, input[type="button"]{
+      width:100%;
+      box-sizing:border-box;
+      margin-top:10px;
+      padding:10px 10px;
+      border-radius:10px;
+      border:1px solid #d6d6d6;
+      font-size:14px;
     }
-    input[type="button"]:hover { background:#e9e9e9; }
-
-    .sub {
-      font-size: 12px;
-      color: #666;
-      margin-top: 4px;
-      margin-bottom: 10px;
+    input[type="button"]{
+      background:#f2f2f2;
+      font-weight:800;
+      cursor:pointer;
     }
+    input[type="button"]:hover{ background:#e9e9e9; }
   </style>
 </head>
-<body>
 
+<body>
   <header>2026학년도 1학기 시간표 신청</header>
 
   <div class="wrap">
     <p>본 프로그램은 2026학년도 1학기 시간표 작성을 위해 참여학교별로 운영됩니다.</p>
-    <p>각 학교의 개설 과목을 확인하고, 신청한 후 내용을 점검할 수 있습니다.</p>
+    <p>각 단계별로 학교를 선택하여 해당 시트를 열고 입력해 주세요.</p>
 
-    <div style="margin-top:18px;">
+    <div class="btns">
       <button onclick="openSubjects()">학교별 개설 과목</button>
       <button onclick="openModal('phase1')">1차 기초자료 조사</button>
       <button onclick="openModal('phase2')">2차 시간표(안)</button>
@@ -131,7 +127,7 @@
     <div class="note">※ 문의 ☎ 055)230-8332 | 경남온라인학교 최홍현</div>
 
     <div class="logo">
-      <!-- 로고 파일명은 repo에 logo.png로 올려둬야 함 -->
+      <!-- repo에 logo.png 올려두면 자동 표시됨 -->
       <img src="logo.png" alt="경남온라인학교 로고">
     </div>
   </div>
@@ -143,9 +139,9 @@
         <h3 class="modal-title" id="modalTitle">학교 선택</h3>
         <span class="close" onclick="closeModal()">&times;</span>
       </div>
+
       <div class="sub" id="modalSub">학교를 선택한 뒤 ‘이동’을 누르세요.</div>
 
-      <label for="schoolSelect">학교 선택:</label>
       <select id="schoolSelect">
         <option value="">-- 학교를 선택하세요 --</option>
       </select>
@@ -155,9 +151,9 @@
   </div>
 
   <script>
-    /* -----------------------------
-       0) 학교별 개설 과목(1차 파일의 참여학교별 탭)
-       ----------------------------- */
+    /* =========================
+       0) 학교별 개설 과목 (참여학교별)
+       ========================= */
     function openSubjects() {
       window.open(
         "https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=400361732",
@@ -165,10 +161,9 @@
       );
     }
 
-    /* -----------------------------
-       1) 1차 링크(기존 파일)
-       - 빠진 학교 있어도 상관 없음(요청대로)
-       ----------------------------- */
+    /* =========================
+       1) 1차 링크 (gid 포함)
+       ========================= */
     const phase1Links = {
       "거창여고":"https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=329893221",
       "금남고":"https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=1564150147",
@@ -201,62 +196,57 @@
       "합천여고":"https://docs.google.com/spreadsheets/d/1fxZMocBaHHjE82hRnsV9-RzGO3o7QDrkBt2cGYXWSHo/edit#gid=652343260"
     };
 
-    /* -----------------------------
-       2) 2차 링크(새 파일: 너가 준 gid 목록)
-       ----------------------------- */
-    const SHEET2_ID = "1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc";
-
-    const phase2Gids = {
-      "거창여고": 703539223,
-      "금남고": 313159597,
-      "남지고": 1872741651,
-      "세종고": 724271639,
-      "남해제일고": 756367633,
-      "단성고": 1431288437,
-      "덕산고": 70809824,
-      "진서고": 597444004,
-      "밀성고": 1155796021,
-      "밀양여고": 2101075329,
-      "삼가고": 1493025706,
-      "삼랑진고": 942757962,
-      "창녕고": 1998593879,
-      "진교고": 1556549983,
-      "삼천포여고": 2025535525,
-      "삼천포중앙고": 994526216,
-      "합천고": 1864217570,
-      "안의고": 1345449043,
-      "야로고": 340994407,
-      "서상고": 983633852,
-      "아림고": 1908049231,
-      "영산고": 305772088,
-      "옥종고": 303367491,
-      "진해용원고": 1870051348,
-      "창녕여고": 1259655407,
-      "창녕대성고": 1985849119,
-      "의령여고": 1485521408,
-      "창원명지여고": 347478094,
-      "합천여고": 739168214
+    /* =========================
+       2) 2차 링크 (새 파일, gid 포함)
+       ========================= */
+    const phase2Links = {
+      "거창여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=703539223",
+      "금남고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=313159597",
+      "남지고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1872741651",
+      "세종고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=724271639",
+      "남해제일고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=756367633",
+      "단성고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1431288437",
+      "덕산고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=70809824",
+      "진서고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=597444004",
+      "밀성고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1155796021",
+      "밀양여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=2101075329",
+      "삼가고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1493025706",
+      "삼랑진고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=942757962",
+      "창녕고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1998593879",
+      "진교고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1556549983",
+      "삼천포여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=2025535525",
+      "삼천포중앙고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=994526216",
+      "합천고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1864217570",
+      "안의고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1345449043",
+      "야로고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=340994407",
+      "서상고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=983633852",
+      "아림고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1908049231",
+      "영산고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=305772088",
+      "옥종고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=303367491",
+      "진해용원고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1870051348",
+      "창녕여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1259655407",
+      "창녕대성고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1985849119",
+      "의령여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=1485521408",
+      "창원명지여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=347478094",
+      "합천여고":"https://docs.google.com/spreadsheets/d/1vizrxh3ddOUQKRFXUJdMAxbBw1uvZ7_mrtH_1t9dJAc/edit#gid=739168214"
     };
 
-    const phase2Links = Object.fromEntries(
-      Object.entries(phase2Gids).map(([name, gid]) => [
-        name,
-        `https://docs.google.com/spreadsheets/d/${SHEET2_ID}/edit#gid=${gid}`
-      ])
-    );
+    /* =========================
+       3) 모달 로직 (1차/2차 분기)
+       ========================= */
+    let currentLinks = {};
+    let currentPhase = "phase1";
 
-    /* -----------------------------
-       3) 모달 동작
-       ----------------------------- */
     function openModal(phase) {
+      currentPhase = phase;
+      currentLinks = (phase === "phase2") ? phase2Links : phase1Links;
+
       const select = document.getElementById("schoolSelect");
       select.innerHTML = '<option value="">-- 학교를 선택하세요 --</option>';
 
-      const data = (phase === "phase2") ? phase2Links : phase1Links;
-
-      Object.keys(data).forEach(name => {
+      Object.keys(currentLinks).forEach(name => {
         const opt = document.createElement("option");
-        opt.value = data[name];
+        opt.value = currentLinks[name];
         opt.textContent = name;
         select.appendChild(opt);
       });
@@ -284,30 +274,24 @@
       const link = document.getElementById("schoolSelect").value;
       if (!link) return alert("학교를 선택하세요!");
       window.open(link, "_blank");
-      closeModal(); // ✅ 이동하면 모달 자동 닫기
+      closeModal();
     }
 
-    // 바깥 클릭 시 닫기
+    // 모달 바깥 클릭 닫기
     window.addEventListener("click", function(e) {
       const modal = document.getElementById("schoolModal");
       if (e.target === modal) closeModal();
     });
 
-    // ESC로 닫기
+    // ESC 닫기
     window.addEventListener("keydown", function(e) {
       if (e.key === "Escape") closeModal();
     });
 
-    // ✅ 혹시 캐시/이전 코드 때문에 모달이 계속 떠있으면, 로드시 무조건 닫기
+    // 혹시 이전 캐시/오작동 방지: 로드시 무조건 닫기
     window.addEventListener("load", function() {
       closeModal();
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
